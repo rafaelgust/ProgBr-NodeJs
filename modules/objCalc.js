@@ -1,4 +1,4 @@
-//multiplos export leva apenas o ultimo a ser exportado, para exportar mais de uma função é necessario criar um obj com elas
+//multiplos export leva apenas o ultimo a ser exportado, exportando mais de uma função com um obj nelas
 const calc = {
     soma: (x,y) => {
         return x + y;
