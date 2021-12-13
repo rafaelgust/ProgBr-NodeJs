@@ -13,6 +13,4 @@ if(args[0] === 's'){
 }else{
     return console.log('adicione um modo de operação!!!');
 }
-
-
 console.log(result);
