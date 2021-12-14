@@ -3,17 +3,17 @@ const compress_images = require('compress-images');
 
 let path = process.argv[2]; // pegar img
 let width = Number(process.argv[3]); //tamanho
+let outPutPath = './outputSize.png';
 
-function resize(path, width){
-    
+function resize(path, width, outPutPath){
     sharp(path)
         .resize({width: width})
-        .toFile('./outputSize.png', (err, info) => {
-            err ? console.log(err) : console.log(info);
+        .toFile(outPutPath, (err, info) => {
+            err ? console.log(err) : console.log(info), compress(outPutPath, "./compressed");
         });
 }
 
-resize(path, width);
+resize(path, width, outPutPath);
 
 function compress(pathInput, outputPath){
     compress_images(pathInput, outputPath, { compress_force: false, statistic: true, autoupdate: true }, false,
@@ -30,7 +30,5 @@ function compress(pathInput, outputPath){
         }
     );
 }
-
-//compress(path, "./compressed");
 
 
