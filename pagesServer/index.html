@@ -7,6 +7,26 @@
     <title>Home</title>
 </head>
 <body>
-    
+    <main>
+        <button>GET</button>
+        <button>POST</button>
+        <button>PUT</button>
+        <button>DELETE</button>
+    </main>
+    <script>
+        URL_BASE = 'http://localhost:3002/'
+        function get(){
+            fetch(URL_BASE, {method: "get"}).then(res => {});
+        }
+        function post(){
+            fetch(URL_BASE, {method: "post"}).then(res => {});
+        }
+        function put(){
+            fetch(URL_BASE, {method: "put"}).then(res => {});
+        }
+        function del(){
+            fetch(URL_BASE, {method: "delete"}).then(res => {});
+        }
+    </script>
 </body>
 </html>
