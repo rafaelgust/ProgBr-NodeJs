@@ -11,7 +11,7 @@ function resize(path, width, outPutPath){
         .toFile(outPutPath, (err, info) => {
             err ? console.log(err) : console.log(info), compress(outPutPath, "./compressed");
         });
-}
+} //file out 44kb
 
 resize(path, width, outPutPath);
 
@@ -29,6 +29,6 @@ function compress(pathInput, outputPath){
             console.log("-------------");
         }
     );
-}
+} //file out 7kb
 
 
