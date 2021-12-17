@@ -1,6 +1,9 @@
 const http = require('http'), url = require('url'), fs = require('fs');
 
 http.createServer((req, res) => {
+    let method = req.method;
+    console.log(method);
+
     pageServer(req, res);
 }).listen(3002, (err)=>{
     err ? console.log(err + ' Não foi possível criar o servidor') : console.log('Servidor criado na porta 3002');
@@ -12,7 +15,7 @@ function pageServer(req, res){
         path = '/index.html';
     }
     let fileName = `.${path}`;
-    
+
     fs.readFile(fileName, (err, data) => {
         if(err){
             res.writeHead(404, {'Content-type': 'text/html; charset=utf-8'});

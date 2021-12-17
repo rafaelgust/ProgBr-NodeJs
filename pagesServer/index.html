@@ -8,24 +8,24 @@
 </head>
 <body>
     <main>
-        <button>GET</button>
-        <button>POST</button>
-        <button>PUT</button>
-        <button>DELETE</button>
+        <button onclick="get();">GET</button>
+        <button onclick="post();">POST</button>
+        <button onclick="put();">PUT</button>
+        <button onclick="del();">DELETE</button>
     </main>
     <script>
         URL_BASE = 'http://localhost:3002/'
         function get(){
-            fetch(URL_BASE, {method: "get"}).then(res => {});
+            fetch(URL_BASE, {method: "get"}).then(res => { console.log(res); }).catch(err => { console.log(err); });
         }
         function post(){
-            fetch(URL_BASE, {method: "post"}).then(res => {});
+            fetch(URL_BASE, {method: "post"}).then(res => { console.log(res); }).catch(err => { console.log(err); });
         }
         function put(){
-            fetch(URL_BASE, {method: "put"}).then(res => {});
+            fetch(URL_BASE, {method: "put"}).then(res => { console.log(res); }).catch(err => { console.log(err); });
         }
         function del(){
-            fetch(URL_BASE, {method: "delete"}).then(res => {});
+            fetch(URL_BASE, {method: "delete"}).then(res => { console.log(res); }).catch(err => { console.log(err); });
         }
     </script>
 </body>
