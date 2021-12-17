@@ -7,6 +7,26 @@
     <title>Express</title>
 </head>
 <body>
-    
+    <main>
+        <button onclick="get();">GET</button>
+        <button onclick="post();">POST</button>
+        <button onclick="put();">PUT</button>
+        <button onclick="del();">DELETE</button>
+    </main>
+    <script>
+        URL_BASE = 'http://localhost:5000/'
+        function get(){
+            fetch(URL_BASE + 'methods', {method: "get"}).then(res => {return res.text();}).then(html => {console.log(html)}).catch(err => { console.log(err); });
+        }
+        function post(){
+            fetch(URL_BASE + 'methods', {method: "post"}).then(res => {return res.text();}).then(html => {console.log(html)}).catch(err => { console.log(err); });
+        }
+        function put(){
+            fetch(URL_BASE + 'methods', {method: "put"}).then(res => {return res.text();}).then(html => {console.log(html)}).catch(err => { console.log(err); });
+        }
+        function del(){
+            fetch(URL_BASE + 'methods', {method: "delete"}).then(res => {return res.text();}).then(html => {console.log(html)}).catch(err => { console.log(err); });
+        }
+    </script>
 </body>
 </html>
