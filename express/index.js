@@ -17,6 +17,14 @@ app.delete("/methods", (req, res) => {
 	res.send('<h1>delete</h1>');
 });
 
+app.get('/user/:id', function (req, res) { // /user/2
+	res.send(`usuário com o id ${req.params.id}`);
+});
+
+app.get('/user', function (req, res) { // /user/id=2
+	res.send(`usuário com o id ${req.query.id}`);
+});
+
 app.listen(PORT, () => {
     console.log(`Server Running on Port: ${PORT}`);
 })
